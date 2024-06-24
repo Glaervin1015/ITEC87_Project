@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sari Sari Store</title>
+<style>
+    table {
+        width: 50%;
+        margin: 0 auto;
+    }
+    table tr th, table tr td {
+        padding: 10px;
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+
+<h1 align= center>Sari Sari Store</h1 align= center>
+<br><br>
+
+<table border="1">
+    <tr>
+        <th>Item</th>
+        <th>Price</th>
+        <th>Quantity</th>
+    </tr>
+    <tr>
+        <td>Ripped Jeans</td>
+        <td>800php</td>
+        <td>
+            <button onclick="deductQuantity(1)">-</button>
+            <span id="quantity1">0</span>
+            <button onclick="addQuantity(1)">+</button>
+        </td>
+    </tr>
+    <tr>
+        <td>Straight Cut Jeans</td>
+        <td>850php</td>
+        <td>
+            <button onclick="deductQuantity(2)">-</button>
+            <span id="quantity2">0</span>
+            <button onclick="addQuantity(2)">+</button>
+        </td>
+    </tr>
+    <tr>
+        <td>Baston Jeans</td>
+        <td>850php</td>
+        <td>
+            <button onclick="deductQuantity(3)">-</button>
+            <span id="quantity3">0</span>
+            <button onclick="addQuantity(3)">+</button>
+        </td>
+    </tr>
+	<tr>
+	
+        <td>Fitted Jeans</td>
+        <td>850php</td>
+        <td>
+            <button onclick="deductQuantity(4)">-</button>
+            <span id="quantity4">0</span>
+            <button onclick="addQuantity(4)">+</button>
+        </td>
+    </tr>
+	
+	
+	<tr>
+        <td>Oversize T-Shirts</td>
+        <td>850php</td>
+        <td>
+            <button onclick="deductQuantity(5)">-</button>
+            <span id="quantity5">0</span>
+            <button onclick="addQuantity(5)">+</button>
+        </td>
+    </tr>
+	<tr>
+        <td>Body Fit T-Shirts</td>
+        <td>850php</td>
+        <td>
+            <button onclick="deductQuantity(6)">-</button>
+            <span id="quantity6">0</span>
+            <button onclick="addQuantity(6)">+</button>
+        </td>
+    </tr>
+		<tr>
+        <td>Plain T-Shirts</td>
+        <td>850php</td>
+        <td>
+            <button onclick="deductQuantity(7)">-</button>
+            <span id="quantity7">0</span>
+            <button onclick="addQuantity(7)">+</button>
+        </td>
+    </tr>
+		<tr>
+        <td>V-Neck T-Shirts</td>
+        <td>850php</td>
+        <td>
+            <button onclick="deductQuantity(8)">-</button>
+            <span id="quantity8">0</span>
+            <button onclick="addQuantity(8)">+</button>
+        </td>
+    </tr>
+		<tr>
+        <td>Sweet Scent Perfumes</td>
+        <td>850php</td>
+        <td>
+            <button onclick="deductQuantity(9)">-</button>
+            <span id="quantity9">0</span>
+            <button onclick="addQuantity(9)">+</button>
+        </td>
+    </tr>
+		<tr>
+        <td>Men Perfume</td>
+        <td>850php</td>
+        <td>
+            <button onclick="deductQuantity(10)">-</button>
+            <span id="quantity10">0</span>
+            <button onclick="addQuantity(10)">+</button>
+        </td>
+    </tr>
+		<tr>
+        <td>Women Perfume</td>
+        <td>850php</td>
+        <td>
+            <button onclick="deductQuantity(11)">-</button>
+            <span id="quantity12">0</span>
+            <button onclick="addQuantity(13)">+</button>
+        </td>
+    </tr>
+		<tr>
+        <td>Night Perfume</td>
+        <td>850php</td>
+        <td>
+            <button onclick="deductQuantity(12)">-</button>
+            <span id="quantity12">0</span>
+            <button onclick="addQuantity(12)">+</button>
+        </td>
+    </tr>
+		<tr>
+        <td>Body Fit T-Shirts</td>
+        <td>850php</td>
+        <td>
+            <button onclick="deductQuantity(6)">-</button>
+            <span id="quantity6">0</span>
+            <button onclick="addQuantity(6)">+</button>
+        </td>
+    </tr>
+		<tr>
+        <td>Body Fit T-Shirts</td>
+        <td>850php</td>
+        <td>
+            <button onclick="deductQuantity(6)">-</button>
+            <span id="quantity6">0</span>
+            <button onclick="addQuantity(6)">+</button>
+        </td>
+    </tr>
+		<tr>
+        <td>Body Fit T-Shirts</td>
+        <td>850php</td>
+        <td>
+            <button onclick="deductQuantity(6)">-</button>
+            <span id="quantity6">0</span>
+            <button onclick="addQuantity(6)">+</button>
+        </td>
+    </tr>
+		<tr>
+        <td>Body Fit T-Shirts</td>
+        <td>850php</td>
+        <td>
+            <button onclick="deductQuantity(6)">-</button>
+            <span id="quantity6">0</span>
+            <button onclick="addQuantity(6)">+</button>
+        </td>
+    </tr>
+		<tr>
+        <td>Body Fit T-Shirts</td>
+        <td>850php</td>
+        <td>
+            <button onclick="deductQuantity(6)">-</button>
+            <span id="quantity6">0</span>
+            <button onclick="addQuantity(6)">+</button>
+        </td>
+    </tr>
+		<tr>
+        <td>Body Fit T-Shirts</td>
+        <td>850php</td>
+        <td>
+            <button onclick="deductQuantity(6)">-</button>
+            <span id="quantity6">0</span>
+            <button onclick="addQuantity(6)">+</button>
+        </td>
+    </tr>
+		<tr>
+        <td>Body Fit T-Shirts</td>
+        <td>850php</td>
+        <td>
+            <button onclick="deductQuantity(6)">-</button>
+            <span id="quantity6">0</span>
+            <button onclick="addQuantity(6)">+</button>
+        </td>
+    </tr>
+		<tr>
+        <td>Body Fit T-Shirts</td>
+        <td>850php</td>
+        <td>
+            <button onclick="deductQuantity(6)">-</button>
+            <span id="quantity6">0</span>
+            <button onclick="addQuantity(6)">+</button>
+        </td>
+    </tr>
+</table>
+
+<script>
+    function addQuantity(itemId) {
+        var quantityElement = document.getElementById('quantity' + itemId);
+        var currentQuantity = parseInt(quantityElement.innerText);
+        quantityElement.innerText = currentQuantity + 1;
+    }
+
+    function deductQuantity(itemId) {
+        var quantityElement = document.getElementById('quantity' + itemId);
+        var currentQuantity = parseInt(quantityElement.innerText);
+        if (currentQuantity > 0) {
+            quantityElement.innerText = currentQuantity - 1;
+        }
+    }
+</script>
+
+</body>
+</html>

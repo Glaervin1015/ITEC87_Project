@@ -1,0 +1,54 @@
+
+
+	
+	
+		
+
+.container{
+	background: linear-gradient(to right, #8e44ad, #3498db);
+	max-width: 1200px;
+	margin-inline: auto;
+	padding-left:40px;
+	padding-right: 40px;
+	border: 3px solid;
+	
+
+	
+}
+
+h1 {
+    color: orangered;
+}
+
+big {
+    font-weight: bold;
+}
+
+li {
+    list-style-type: none;
+    margin-bottom: 10px;
+}
+
+hr {
+    border: 2px solid #ccc;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#name{
+    
+    font-size: 300%;
+    font-family: Arial, sans-serif;
+    color: red
+
+}
+#profile-photo {
+    float: right;
+    width: 220px;
+    height: 220px;
+	border: 1px solid;
+	margin-top: 5px;
+	
+	
+	
+	
+}

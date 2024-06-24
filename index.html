@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .navbar {
+            display: flex;
+            background-color: #333;
+            padding: 1rem;
+        }
+
+        .navbar button {
+            color: white;
+            background-color: #333;
+            border: none;
+            padding: 1rem 2rem;
+            margin: 0 1rem;
+            cursor: pointer;
+            font-size: 40px;
+            font-style: italic;
+            
+        }
+
+        .navbar button:hover {
+            background-color: gray;
+            
+        }
+
+        .container {
+            padding: 2rem;
+        }
+        #Banner {
+            font-size: 10em;
+            text-align: center;
+            font-weight: bold ;
+            color: purple;
+            
+        }
+        #direction{
+            font-size:  40px;
+            text-align: center;
+            color: blue;
+        }
+       
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <button id="act1">Resume</button>
+        <button id="act2">Registration Form</button>
+        <button id="act3">Glaervin's Eatery</button>
+        <button id="act4">Sari-Sari Store</button>
+    </div>
+    <div class="container">
+        <h1 id="Banner">Project Compilation</h1>
+        <br><br>
+        <p id="direction">Select a project from the navigation bar to view its details.</p>
+    </div>
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+    <script>
+        $(document).ready(function () {
+            $("#act1").click(function () {
+                $(".container").load("bsre4sume/BS_resume.html");
+            });
+            $("#act2").click(function () {
+                $(".container").load("regform/Lay_Reg_Form.html");
+            });
+            $("#act3").click(function () {
+                $(".container").load("Lay_Ervin_Lester/GlaervinEatery.html");
+            });
+            $("#act4").click(function () {
+                $(".container").load("Lay_Sari-Saristore/Sari.html");
+            });
+        })
+
+    </script>
+</body>
+
+</html>

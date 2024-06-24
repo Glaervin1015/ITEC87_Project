@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sari Sari Store</title>
+    <style>
+        .logo {
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        table {
+            width: 60%;
+            margin: 0 auto;
+        }
+
+        table tr th,
+        table tr td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        #stockTable tr th,
+        #stockTable tr td {
+            vertical-align: middle;
+        }
+
+        table tr td img {
+            max-width: 100px;
+        }
+    </style>
+</head>
+
+<body style="background-color: pink;">
+
+
+    <img class="logo" src="Lay_Sari-Saristore/logo.png" alt="Your Logo">
+
+    <h1 align="center"><big>Sari Sari Store</big></h1>
+
+    <br><br>
+
+    <table border="1">
+        <tr>
+            <th><big>Image</big></th>
+            <th><big>Item</big></th>
+            <th><big>Price</big></th>
+            <th><big>Quantity</big></th>
+        </tr>
+        <tr>
+            <td><img src="Lay_Sari-Saristore/ripped.jpg" alt="Ripped Jeans"></td>
+            <td>Ripped Jeans</td>
+            <td>800php</td>
+            <td>
+                <button onclick="changeQuantity(1, 'subtract')">-</button>
+                <span id="quantity1">0</span>
+                <button onclick="changeQuantity(1, 'add')">+</button>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="Lay_Sari-Saristore/straight.jpg" alt="straight"></td>
+            <td>Straight Cut Jeans</td>
+            <td>800php</td>
+            <td>
+                <button onclick="changeQuantity(2, 'subtract')">-</button>
+                <span id="quantity2">0</span>
+                <button onclick="changeQuantity(2, 'add')">+</button>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="Lay_Sari-Saristore/skinny.jpg" alt="Skinny"></td>
+            <td>Skinny Jeans</td>
+            <td>800php</td>
+            <td>
+                <button onclick="changeQuantity(3, 'subtract')">-</button>
+                <span id="quantity3">0</span>
+                <button onclick="changeQuantity(3, 'add')">+</button>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="Lay_Sari-Saristore/fitted.jpg" alt="Fit"></td>
+            <td>Fitted Jeans</td>
+            <td>800php</td>
+            <td>
+                <button onclick="changeQuantity(4, 'subtract')">-</button>
+                <span id="quantity4">0</span>
+                <button onclick="changeQuantity(4, 'add')">+</button>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="Lay_Sari-Saristore/bodyfit.jpg" alt="bfit"></td>
+            <td>Body Fit Shirt</td>
+            <td>800php</td>
+            <td>
+                <button onclick="changeQuantity(5, 'subtract')">-</button>
+                <span id="quantity5">0</span>
+                <button onclick="changeQuantity(5, 'add')">+</button>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="Lay_Sari-Saristore/nike.jpg" alt="Nshirts"></td>
+            <td>Nike Shirt</td>
+            <td>800php</td>
+            <td>
+                <button onclick="changeQuantity(6, 'subtract')">-</button>
+                <span id="quantity6">0</span>
+                <button onclick="changeQuantity(6, 'add')">+</button>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="Lay_Sari-Saristore/oversize.jpg" alt="Osize"></td>
+            <td>Oversize Shirt</td>
+            <td>800php</td>
+            <td>
+                <button onclick="changeQuantity(7, 'subtract')">-</button>
+                <span id="quantity7">0</span>
+                <button onclick="changeQuantity(7, 'add')">+</button>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="Lay_Sari-Saristore/tribal.jpg" alt="TriShirt"></td>
+            <td>Tribal Shirt</td>
+            <td>800php</td>
+            <td>
+                <button onclick="changeQuantity(8, 'subtract')">-</button>
+                <span id="quantity8">0</span>
+                <button onclick="changeQuantity(8, 'add')">+</button>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="Lay_Sari-Saristore/croptop.jpg" alt="ctop"></td>
+            <td>Croptop Sando</td>
+            <td>800php</td>
+            <td>
+                <button onclick="changeQuantity(9, 'subtract')">-</button>
+                <span id="quantity9">0</span>
+                <button onclick="changeQuantity(9, 'add')">+</button>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="Lay_Sari-Saristore/kidssando.jpg" alt="ksando"></td>
+            <td>Kids Sando</td>
+            <td>800php</td>
+            <td>
+                <button onclick="changeQuantity(10, 'subtract')">-</button>
+                <span id="quantity10">0</span>
+                <button onclick="changeQuantity(10, 'add')">+</button>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="Lay_Sari-Saristore/menssando.jpg" alt="msando"></td>
+            <td>Mens Sando</td>
+            <td>800php</td>
+            <td>
+                <button onclick="changeQuantity(11, 'subtract')">-</button>
+                <span id="quantity11">0</span>
+                <button onclick="changeQuantity(11, 'add')">+</button>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="Lay_Sari-Saristore/womensando.jpg" alt="wsando"></td>
+            <td>Women Sando</td>
+            <td>800php</td>
+            <td>
+                <button onclick="changeQuantity(12, 'subtract')">-</button>
+                <span id="quantity12">0</span>
+                <button onclick="changeQuantity(12, 'add')">+</button>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="Lay_Sari-Saristore/drone.jpg" alt="dtoys"></td>
+            <td>Drone</td>
+            <td>800php</td>
+            <td>
+                <button onclick="changeQuantity(13, 'subtract')">-</button>
+                <span id="quantity13">0</span>
+                <button onclick="changeQuantity(13, 'add')">+</button>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="Lay_Sari-Saristore/board.jpg" alt="bgames"></td>
+            <td>Board Games</td>
+            <td>800php</td>
+            <td>
+                <button onclick="changeQuantity(14, 'subtract')">-</button>
+                <span id="quantity14">0</span>
+                <button onclick="changeQuantity(14, 'add')">+</button>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="Lay_Sari-Saristore/rccars.jpg" alt="rtoys"></td>
+            <td>RC Cars</td>
+            <td>800php</td>
+            <td>
+                <button onclick="changeQuantity(15, 'subtract')">-</button>
+                <span id="quantity15">0</span>
+                <button onclick="changeQuantity(15, 'add')">+</button>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="Lay_Sari-Saristore/lego.jpg" alt="ltoys"></td>
+            <td>LEGO</td>
+            <td>800php</td>
+            <td>
+                <button onclick="changeQuantity(16, 'subtract')">-</button>
+                <span id="quantity16">0</span>
+                <button onclick="changeQuantity(16, 'add')">+</button>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="Lay_Sari-Saristore/penshoppe.jpg" alt="pperfume"></td>
+            <td>Penshoppe Perfume</td>
+            <td>800php</td>
+            <td>
+                <button onclick="changeQuantity(17, 'subtract')">-</button>
+                <span id="quantity17">0</span>
+                <button onclick="changeQuantity(17, 'add')">+</button>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="Lay_Sari-Saristore/sweetscent.jpg" alt="sperfume"></td>
+            <td>Sweet Scent Perfume</td>
+            <td>800php</td>
+            <td>
+                <button onclick="changeQuantity(18, 'subtract')">-</button>
+                <span id="quantity18">0</span>
+                <button onclick="changeQuantity(18, 'add')">+</button>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="Lay_Sari-Saristore/womens.jpg" alt="wperfume"></td>
+            <td>Women Perfume</td>
+            <td>800php</td>
+            <td>
+                <button onclick="changeQuantity(19, 'subtract')">-</button>
+                <span id="quantity19">0</span>
+                <button onclick="changeQuantity(19, 'add')">+</button>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="Lay_Sari-Saristore/mens.jpg" alt="mperfume"></td>
+            <td>Mens Perfume</td>
+            <td>800php</td>
+            <td>
+                <button onclick="changeQuantity(20, 'subtract')">-</button>
+                <span id="quantity20">0</span>
+                <button onclick="changeQuantity(20, 'add')">+</button>
+            </td>
+        </tr>
+
+    </table>
+
+    <br><br>
+    <button onclick="generateReceipt()">Generate Receipt</button>
+    <br><br>
+    <button onclick="viewStock()">View Stock</button>
+
+
+
+    <br><br>
+
+
+
+    <script>
+        // Array to store initial stock quantities
+        var stock = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5];
+
+        // Consolidated function to change quantity
+        function changeQuantity(itemId, action) {
+            var quantityElement = document.getElementById('quantity' + itemId);
+            var currentQuantity = parseInt(quantityElement.innerText);
+            if (action === 'add') {
+                if (stock[itemId - 1] > 0) {
+                    quantityElement.innerText = currentQuantity + 1;
+                    stock[itemId - 1]--;
+                }
+            } else if (action === 'subtract') {
+                if (currentQuantity > 0) {
+                    quantityElement.innerText = currentQuantity - 1;
+                    stock[itemId - 1]++;
+                }
+            }
+            updateStockTable(); // Update stock table
+            updateButtons(itemId); // Update quantity buttons
+        }
+
+        // Function to update the stock table
+        function updateStockTable() {
+            var stockTable = document.getElementById('stockTable');
+            // Update stock table with current stock data
+            for (var i = 0; i < stock.length; i++) {
+                var stockCell = stockTable.rows[i + 1].cells[1];
+                stockCell.innerText = stock[i];
+            }
+        }
+
+        // Function to get the price of an item based on item ID
+        function getPrice(itemId) {
+            // Add price logic here for each item ID
+            switch (itemId) {
+                case 1:
+                    return 800;
+                // Add other item prices here
+                default:
+                    return 0;
+            }
+        }
+
+        // Function to update the stock array when editing the stock directly
+        {
+            function updateStock(itemId, newStock) {
+                var newQuantity = parseInt(newStock);
+                if (!isNaN(newQuantity) && newQuantity >= 0) {
+                    stock[itemId - 1] = newQuantity;
+                    updateStockTable(); // Update stock table
+                    updateButtons(itemId); // Update quantity buttons
+                }
+            }
+
+            // Function to update the quantity buttons based on stock availability
+            function updateButtons(itemId) {
+                var quantityElement = document.getElementById('quantity' + itemId);
+                var currentQuantity = parseInt(quantityElement.innerText);
+                var addButton = quantityElement.nextElementSibling;
+                var subtractButton = quantityElement.previousElementSibling;
+
+                // Disable add button if stock is zero
+                if (stock[itemId - 1] === 0) {
+                    addButton.disabled = true;
+                } else {
+                    addButton.disabled = false;
+                }
+
+                // Disable subtract button if quantity is zero
+                if (currentQuantity === 0) {
+                    subtractButton.disabled = true;
+                } else {
+                    subtractButton.disabled = false;
+                }
+            }
+
+
+            function generateReceipt() {
+                var receipt = "Receipt\n\n";
+                var totalOrderPrice = 0; // Variable to store the total price for all orders
+                var table = document.querySelector('table');
+
+                // Calculate total order price
+                for (var i = 1; i < table.rows.length; i++) {
+                    var itemName = table.rows[i].cells[1].innerText;
+                    var itemQuantity = parseInt(table.rows[i].cells[3].querySelector('span').innerText);
+                    if (itemQuantity > 0) { // Only include items with quantity greater than zero
+                        var itemPrice = parseInt(table.rows[i].cells[2].innerText);
+                        var itemTotalPrice = itemQuantity * itemPrice; // Calculate total price for the current item
+                        totalOrderPrice += itemTotalPrice; // Add the total price of the current item to the total order price
+                        receipt += "Item: " + itemName + ", Quantity: " + itemQuantity + ", Total Price: " + itemTotalPrice + "php\n";
+                    }
+                }
+
+                // Get the discount type from the user
+                var discountType = prompt("Enter discount type (senior, pwd, student, none):").toLowerCase();
+                var discountPercentage = 0;
+
+                // Determine discount percentage
+                if (discountType === "senior") {
+                    discountPercentage = 20;
+                } else if (discountType === "pwd") {
+                    discountPercentage = 30;
+                } else if (discountType === "student") {
+                    discountPercentage = 10;
+                }
+
+                // Calculate discount amount and apply it
+                var discountAmount = (totalOrderPrice * discountPercentage) / 100;
+                var discountedPrice = totalOrderPrice - discountAmount;
+
+                receipt += "\nTotal Order Price: " + totalOrderPrice + "php";
+                if (discountPercentage > 0) {
+                    receipt += "\nDiscount Applied: " + discountPercentage + "% (-" + discountAmount + "php)";
+                    receipt += "\nDiscounted Price: " + discountedPrice + "php";
+                }
+
+                alert(receipt);
+            }
+
+        }
+        {
+            function viewStock() {
+                window.location.href = 'Lay_Sari-Saristore/stock.html';
+            }
+        }
+    </script>
+
+</body>
+
+</html>

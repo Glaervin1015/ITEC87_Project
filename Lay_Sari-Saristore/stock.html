@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stock Table</title>
+<style>
+    table {
+        width: 60%;
+        margin: 20px auto;
+        border-collapse: collapse;
+    }
+    table th, table td {
+        padding: 10px;
+        text-align: center;
+        border: 1px solid #000;
+    }
+</style>
+</head>
+<body style="background-color: pink;">
+
+<h1 align="center">Available Stock</h1>
+
+<table id="stockTable" border="1">
+    <caption>Available Stock</caption>
+    <tr>
+        <th>Item</th>
+        <th>Stock</th>
+    </tr>
+    <tr>
+        <td>Ripped Jeans</td>
+        <td contenteditable="true" onblur="updateStock(1, this.innerText)">5</td>
+    </tr>
+    <tr>
+        <td>Straight Cut Jeans</td>
+        <td contenteditable="true" onblur="updateStock(2, this.innerText)">5</td>
+    </tr>
+    <tr>
+        <td>Skinny Jeans</td>
+        <td contenteditable="true" onblur="updateStock(3, this.innerText)">5</td>
+    </tr>
+    <tr>
+        <td>Fitted Jeans</td>
+        <td contenteditable="true" onblur="updateStock(4, this.innerText)">5</td>
+    </tr>
+    <tr>
+        <td>Body Fit Shirt</td>
+        <td contenteditable="true" onblur="updateStock(5, this.innerText)">5</td>
+    </tr>
+    <tr>
+        <td>Nike Shirt</td>
+        <td contenteditable="true" onblur="updateStock(6, this.innerText)">5</td>
+    </tr>
+    <tr>
+        <td>Oversize Shirt</td>
+        <td contenteditable="true" onblur="updateStock(7, this.innerText)">5</td>
+    </tr>
+    <tr>
+        <td>Tribal Shirt</td>
+        <td contenteditable="true" onblur="updateStock(8, this.innerText)">5</td>
+    </tr>
+    <tr>
+        <td>Croptop Sando</td>
+        <td contenteditable="true" onblur="updateStock(9, this.innerText)">5</td>
+    </tr>
+    <tr>
+        <td>Kids Sando</td>
+        <td contenteditable="true" onblur="updateStock(10, this.innerText)">5</td>
+    </tr>
+    <tr>
+        <td>Mens Sando</td>
+        <td contenteditable="true" onblur="updateStock(11, this.innerText)">5</td>
+    </tr>
+    <tr>
+        <td>Women Sando</td>
+        <td contenteditable="true" onblur="updateStock(12, this.innerText)">5</td>
+    </tr>
+    <tr>
+        <td>Drone</td>
+        <td contenteditable="true" onblur="updateStock(13, this.innerText)">5</td>
+    </tr>
+    <tr>
+        <td>Board Games</td>
+        <td contenteditable="true" onblur="updateStock(14, this.innerText)">5</td>
+    </tr>
+    <tr>
+        <td>RC Cars</td>
+        <td contenteditable="true" onblur="updateStock(15, this.innerText)">5</td>
+    </tr>
+    <tr>
+        <td>LEGO</td>
+        <td contenteditable="true" onblur="updateStock(16, this.innerText)">5</td>
+    </tr>
+    <tr>
+        <td>Penshoppe Perfume</td>
+        <td contenteditable="true" onblur="updateStock(17, this.innerText)">5</td>
+    </tr>
+    <tr>
+        <td>Sweet Scent Perfume</td>
+        <td contenteditable="true" onblur="updateStock(18, this.innerText)">5</td>
+    </tr>
+    <tr>
+        <td>Women Perfume</td>
+        <td contenteditable="true" onblur="updateStock(19, this.innerText)">5</td>
+    </tr>
+    <tr>
+        <td>Mens Perfume</td>
+        <td contenteditable="true" onblur="updateStock(20, this.innerText)">5</td>
+    </tr>
+</table>
+<br><br>
+<button onclick="MainPage()">Main Page</button>
+<script>
+    // Array to store initial stock quantities
+    var stock = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5];
+
+    // Consolidated function to change quantity
+    function changeQuantity(itemId, action) {
+        var quantityElement = document.getElementById('quantity' + itemId);
+        var currentQuantity = parseInt(quantityElement.innerText);
+        if (action === 'add') {
+            if (stock[itemId - 1] > 0) {
+                quantityElement.innerText = currentQuantity + 1;
+                stock[itemId - 1]--;
+            }
+        } else if (action === 'subtract') {
+            if (currentQuantity > 0) {
+                quantityElement.innerText = currentQuantity - 1;
+                stock[itemId - 1]++;
+            }
+        }
+        updateStockTable(); // Update stock table
+        updateButtons(itemId); // Update quantity buttons
+    }
+
+    // Function to update the stock table
+    function updateStockTable() {
+        var stockTable = document.getElementById('stockTable');
+        // Update stock table with current stock data
+        for (var i = 0; i < stock.length; i++) {
+            var stockCell = stockTable.rows[i + 1].cells[1];
+            stockCell.innerText = stock[i];
+        }
+    }
+
+    // Function to get the price of an item based on item ID
+    function getPrice(itemId) {
+        // Add price logic here for each item ID
+        switch (itemId) {
+            case 1:
+                return 800;
+            // Add other item prices here
+            default:
+                return 0;
+        }
+    }
+
+    // Function to update the stock array when editing the stock directly
+    function updateStock(itemId, newStock) {
+        var newQuantity = parseInt(newStock);
+        if (!isNaN(newQuantity) && newQuantity >= 0) {
+            stock[itemId - 1] = newQuantity;
+            updateStockTable(); // Update stock table
+            updateButtons(itemId); // Update quantity buttons
+        }
+    }
+
+    // Function to update the quantity buttons based on stock availability
+    function updateButtons(itemId) {
+        var quantityElement = document.getElementById('quantity' + itemId);
+        var currentQuantity = parseInt(quantityElement.innerText);
+        var addButton = quantityElement.nextElementSibling;
+        var subtractButton = quantityElement.previousElementSibling;
+
+        // Disable add button if stock is zero
+        if (stock[itemId - 1] === 0) {
+            addButton.disabled = true;
+        } else {
+            addButton.disabled = false;
+        }
+
+        // Disable subtract button if quantity is zero
+        if (currentQuantity === 0) {
+            subtractButton.disabled = true;
+        } else {
+            subtractButton.disabled = false;
+        }
+    }
+
+    // Function to generate receipt
+    function generateReceipt() {
+        var receipt = "Receipt\n\n";
+        var totalOrderPrice = 0; // Variable to store the total price for all orders
+        var table = document.querySelector('table');
+        for (var i = 1; i < table.rows.length; i++) {
+            var itemName = table.rows[i].cells[1].innerText;
+            var itemQuantity = parseInt(table.rows[i].cells[3].querySelector('span').innerText);
+            if (itemQuantity > 0) { // Only include items with quantity greater than zero
+                var itemPrice = parseInt(table.rows[i].cells[2].innerText);
+                var itemTotalPrice = itemQuantity * itemPrice; // Calculate total price for the current item
+                totalOrderPrice += itemTotalPrice; // Add the total price of the current item to the total order price
+                receipt += "Item: " + itemName + ", Quantity: " + itemQuantity + ", Total Price: " + itemTotalPrice + "php\n";
+            }
+        }
+        receipt += "\nTotal Order Price: " + totalOrderPrice + "php"; // Add the total order price to the receipt
+        alert(receipt);
+    }
+	function MainPage() { window.location.href = 'Sari.html';
+	}
+</script>
+
+</body>
+</html>
